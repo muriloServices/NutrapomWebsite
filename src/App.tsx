@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import companyPhoto from './assets/company_full_view.png'
+import companyLogo from './assets/nutrapom.png'
+import truckPhoto from './assets/nutrapom_truck.jpg'
 import './App.css'
 
 const principles = [
@@ -14,7 +17,7 @@ const principles = [
     title: 'Qualidade em cada etapa',
     description:
       'A atenção ao detalhe e o rigor são essenciais para responder às necessidades de cada animal.',
-    icon: 'spark',
+    icon: 'quality',
   },
   {
     number: '03',
@@ -36,14 +39,7 @@ function App() {
     <>
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Nutrapom — início" onClick={closeMenu}>
-          <span className="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 42 42" fill="none">
-              <path d="M8 29.5C17 30 28.5 22 32 9c-9 .5-20.5 8.5-24 20.5Z" />
-              <path d="M9 34c5-7 11-12 20-17" />
-              <path d="M11 20c4-.2 7.5 1 10 3.5M18 13c4 .2 7 1.8 9 4.5" />
-            </svg>
-          </span>
-          <span className="brand-name">nutrapom<span>.</span></span>
+          <img className="brand-logo" src={companyLogo} alt="Nutrapom — Nutrição Animal de Pombal, S.A." />
         </a>
 
         <button
@@ -88,24 +84,18 @@ function App() {
                 O que nos move <span aria-hidden="true">↓</span>
               </a>
             </div>
-            <div className="hero-note">
-              <span className="note-line" />
-              <span>Nutrapom — Nutrição Animal De Pombal, S.A.</span>
-            </div>
           </div>
 
-          <div className="hero-visual" role="img" aria-label="Paisagem rural verde ao amanhecer">
+          <div className="hero-visual">
+            <img className="hero-image" src={truckPhoto} alt="Camião de distribuição Nutrapom com o logótipo da empresa" />
             <div className="visual-overlay" />
             <div className="visual-card">
-              <span className="visual-card-icon" aria-hidden="true">✳</span>
-              <span>Da terra, com cuidado.</span>
+              <img className="visual-card-logo" src={companyLogo} alt="" />
+              <span>Nutrição animal de Pombal.</span>
             </div>
-            <span className="visual-index">39°54' N&nbsp; · &nbsp;08°37' W</span>
+            <span className="visual-index">Nutrapom · Pombal</span>
           </div>
-          <div className="hero-bottom">
-            <span>Nutrição para um futuro melhor</span>
-            <a href="#sobre" aria-label="Descer para conhecer a Nutrapom">↓</a>
-          </div>
+
         </section>
 
         <section className="intro section-wrap" id="sobre">
@@ -129,12 +119,19 @@ function App() {
               </a>
             </div>
           </div>
-          <div className="intro-stamp" aria-hidden="true">
-            <span>Nutrição</span>
-            <span>com cuidado</span>
-            <span className="stamp-leaf">✳</span>
-          </div>
         </section>
+
+        <figure className="company-photo section-wrap">
+          <img
+            src={companyPhoto}
+            alt="Vista das instalações da Nutrapom em Pombal"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>As nossas instalações</span>
+            <span>Pombal, Portugal</span>
+          </figcaption>
+        </figure>
 
         <section className="commitment" id="compromisso">
           <div className="section-wrap commitment-inner">
@@ -157,9 +154,10 @@ function App() {
                         <path d="M5 28c4-7 9-11 16-15" />
                       </svg>
                     )}
-                    {principle.icon === 'spark' && (
+                    {principle.icon === 'quality' && (
                       <svg viewBox="0 0 32 32" fill="none">
-                        <path d="M16 3 18.8 13.2 29 16l-10.2 2.8L16 29l-2.8-10.2L3 16l10.2-2.8L16 3Z" />
+                        <path d="M16 3 26 7v8c0 6.5-4.3 11-10 14-5.7-3-10-7.5-10-14V7l10-4Z" />
+                        <path d="m11.5 16 3 3 6-7" />
                       </svg>
                     )}
                     {principle.icon === 'hands' && (
@@ -180,13 +178,6 @@ function App() {
         </section>
 
         <section className="closing section-wrap" id="contacto">
-          <div className="closing-mark" aria-hidden="true">
-            <svg viewBox="0 0 42 42" fill="none">
-              <path d="M8 29.5C17 30 28.5 22 32 9c-9 .5-20.5 8.5-24 20.5Z" />
-              <path d="M9 34c5-7 11-12 20-17" />
-              <path d="M11 20c4-.2 7.5 1 10 3.5M18 13c4 .2 7 1.8 9 4.5" />
-            </svg>
-          </div>
           <div>
             <span className="eyebrow">Nutrapom · Pombal</span>
             <h2>Vamos falar sobre <em>nutrição?</em></h2>
@@ -205,14 +196,7 @@ function App() {
 
       <footer className="site-footer">
         <a className="brand footer-brand" href="#inicio">
-          <span className="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 42 42" fill="none">
-              <path d="M8 29.5C17 30 28.5 22 32 9c-9 .5-20.5 8.5-24 20.5Z" />
-              <path d="M9 34c5-7 11-12 20-17" />
-              <path d="M11 20c4-.2 7.5 1 10 3.5M18 13c4 .2 7 1.8 9 4.5" />
-            </svg>
-          </span>
-          <span className="brand-name">nutrapom<span>.</span></span>
+          <img className="brand-logo" src={companyLogo} alt="Nutrapom" />
         </a>
         <p>Nutrapom — Nutrição Animal De Pombal, S.A.</p>
         <span className="copyright">© {currentYear} Nutrapom. Todos os direitos reservados.</span>
